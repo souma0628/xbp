@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>そーまの第1回まとめ</title>
+<style>
+body { 
+  font-family: 'Segoe UI', sans-serif; 
+  line-height: 1.8; 
+  margin: 40px; 
+  background: #fdfdfd; 
+  color: #222;
+}
+h1, h2, h3 { color: #2c3e50; }
+code { background: #f4f4f4; padding: 3px 6px; border-radius: 4px; }
+img { max-width: 100%; margin: 10px 0; border-radius: 8px; transition: transform 0.2s; }
+img:hover { transform: scale(1.02); }
+.section { margin-top: 60px; }
+blockquote { background: #f7f7f7; border-left: 5px solid #aaa; padding: 10px; margin: 20px 0; }
+a img { cursor: pointer; }
+</style>
+</head>
+<body>
+<h1>そーまの第1回まとめ</h1>
+<p>このページは「経営学を学ぶ学生・そーま」による第1回まとめノートです。GitとHTMLを実際に触って理解したことを、後から見返しても思い出せるようにまとめました。</p>
+
+<div class="section">
+<h2>1. Gitとは何か</h2>
+<p>Gitは<strong>変更の履歴を管理</strong>するツールです。ソースコードの「過去の状態」や「誰がいつ何を変えたか」をすべて記録できます。</p>
+
+<a href="https://upload.wikimedia.org/wikipedia/commons/6/6a/Git_flow.svg" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Git_flow.svg" alt="Gitフロー図">
+</a>
+
+<blockquote>
+📘 <strong>リポジトリ（Repository）</strong>：プロジェクトのデータベース。<br>
+ローカル（自分のPC）とリモート（GitHub上）で同期できます。
+</blockquote>
+
+<h3>主要コマンド</h3>
+<ul>
+  <li><code>git init</code> — 新しいリポジトリを作成</li>
+  <li><code>git add .</code> — 変更したファイルを登録</li>
+  <li><code>git commit -m "first commit"</code> — コメント付きで保存</li>
+  <li><code>git push origin main</code> — GitHubにアップロード</li>
+</ul>
+
+<a href="https://miro.medium.com/v2/resize:fit:1200/1*hrFqg3eMyD4S1MaX43r0GQ.png" target="_blank">
+  <img src="https://miro.medium.com/v2/resize:fit:1200/1*hrFqg3eMyD4S1MaX43r0GQ.png" alt="commitとpushの違い">
+</a>
+<p>上の図のように、<strong>commitはローカル保存、pushはサーバー送信</strong>。2段階に分かれている理由は、複数人で作業しても安全に統合するためです。</p>
+</div>
+
+<div class="section">
+<h2>2. HTMLとは何か</h2>
+<p>HTMLは<strong>Webページの骨格</strong>を作る言語です。ブラウザに「ここが見出し」「ここが段落」と伝える役割を持ちます。</p>
+
+<h3>基本コード例</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;そーまの第1回まとめ&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;HTMLとは&lt;/h1&gt;
+    &lt;p&gt;Webページの構造を作る言語です。&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html/html-tree.png" target="_blank">
+  <img src="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html/html-tree.png" alt="HTML構造図">
+</a>
+
+<blockquote>
+🧩 <strong>解説：</strong> 上記コードでは <code>&lt;h1&gt;</code> が見出し、<code>&lt;p&gt;</code> が段落。<br>
+<code>&lt;head&gt;</code> 内はページの設定部分、<code>&lt;body&gt;</code> 内が実際に画面に表示される部分です。
+</blockquote>
+</div>
+
+<div class="section">
+<h2>3. GitHub Pagesで公開する手順（スクリーンショット付き）</h2>
+<p>作成したHTMLを「自分のWebサイト」として公開します。</p>
+
+<h3>① リポジトリ作成</h3>
+<a href="https://docs.github.com/assets/images/help/repository/create-repository-name.png" target="_blank">
+  <img src="https://docs.github.com/assets/images/help/repository/create-repository-name.png" alt="リポジトリ作成">
+</a>
+<p>GitHubにログイン → <strong>New Repository</strong> → 名前を <code>soma-website</code> に設定。</p>
+
+<h3>② index.htmlをアップロード</h3>
+<a href="https://docs.github.com/assets/images/help/repository/upload-file-button.png" target="_blank">
+  <img src="https://docs.github.com/assets/images/help/repository/upload-file-button.png" alt="ファイルアップロード">
+</a>
+<p><strong>Add file → Upload files</strong> でHTMLをアップロード。</p>
+
+<h3>③ GitHub Pages設定</h3>
+<a href="https://docs.github.com/assets/images/help/pages/pages-tab.png" target="_blank">
+  <img src="https://docs.github.com/assets/images/help/pages/pages-tab.png" alt="GitHub Pages設定">
+</a>
+<p><strong>Settings → Pages</strong> → <strong>Deploy from a branch</strong> → mainブランチを選択。</p>
+
+<h3>④ 公開完了</h3>
+<a href="https://docs.github.com/assets/images/help/pages/pages-view-site.png" target="_blank">
+  <img src="https://docs.github.com/assets/images/help/pages/pages-view-site.png" alt="サイト公開">
+</a>
+<p>「Your site is live at...」のURLが出たら成功です。</p>
+</div>
+
+<div class="section">
+<h2>4. コードの中身を理解する</h2>
+<p>ここでは、HTMLとGitコマンドの関係を「動作の流れ」で理解します。</p>
+
+<a href="https://wac-cdn.atlassian.com/dam/jcr:d74e84b7-40d2-40e9-ae5c-fd9d4b1dce8a/01%20git%20commit%20push.png" target="_blank">
+  <img src="https://wac-cdn.atlassian.com/dam/jcr:d74e84b7-40d2-40e9-ae5c-fd9d4b1dce8a/01%20git%20commit%20push.png" alt="Gitの流れ">
+</a>
+
+<blockquote>
+🧠 <strong>図解：</strong> ファイルを編集 → <code>add</code> で登録 → <code>commit</code> で記録 → <code>push</code> で共有。<br>
+HTMLを更新したら、この流れでWebに反映されます。
+</blockquote>
+
+<h3>HTMLコード解説図</h3>
+<a href="https://miro.medium.com/v2/resize:fit:1200/1*0bH81R1I6mALb5NVub6r3w.png" target="_blank">
+  <img src="https://miro.medium.com/v2/resize:fit:1200/1*0bH81R1I6mALb5NVub6r3w.png" alt="HTMLタグの意味">
+</a>
+
+<p><strong>ポイント：</strong> HTMLは「タグ（要素）」の入れ子構造。上から順に読み込まれ、構造をツリー化します。</p>
+</div>
+
+<div class="section">
+<h2>5. まとめ</h2>
+<ul>
+  <li>Gitはチーム作業・履歴管理の基礎。</li>
+  <li>HTMLはWebの構造言語。</li>
+  <li>GitHub Pagesで「学びを形」にできる。</li>
+</ul>
+
+<p>→ 次回はCSSでデザインを整える予定です。</p>
+</div>
+
+</body>
+</html>
+
