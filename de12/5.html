@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>そーまの第１回</title>
+<style>
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; margin: 40px; background: #fafafa; color: #333; }
+h1, h2, h3 { color: #2c3e50; }
+code { background: #eee; padding: 3px 6px; border-radius: 4px; }
+img { max-width: 100%; margin: 10px 0; border-radius: 8px; }
+.section { margin-top: 60px; }
+</style>
+</head>
+<body>
+<h1>そーまの第１回まとめ</h1>
+<p>このページは「XBP自分の理解を教科書化したもの」です。人間は忘れる生き物なので、ここではGitとHTMLの理解・疑問・解決をすべて書き残します。</p>
+
+<div class="section">
+<h2>1. Gitとは何か</h2>
+<p>Gitはソースコードやファイルの変更履歴を記録し、複数人で安全に開発を進めるための<strong>分散型バージョン管理システム</strong>です。</p>
+<img src="https://raw.githubusercontent.com/github/explore/main/topics/git/git.png" alt="Gitロゴ">
+
+<h3>リポジトリのイメージ</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Git_flow.svg" alt="Gitフロー図">
+<p>リポジトリ（repository）は、すべての変更履歴が入っている“プロジェクトのデータベース”のようなもの。ローカル（自分のPC）とリモート（GitHubなど）に存在します。</p>
+
+<h3>主なコマンド</h3>
+<ul>
+  <li><code>git init</code>：新しいリポジトリを作成</li>
+  <li><code>git add .</code>：変更をステージング</li>
+  <li><code>git commit -m "コメント"</code>：履歴を記録</li>
+  <li><code>git push origin main</code>：リモートへ送信</li>
+</ul>
+
+<h3>よくある疑問</h3>
+<ul>
+  <li>「commit」と「push」の違いは？ → commitはローカルの履歴保存、pushはサーバー（GitHub）に反映。</li>
+  <li>「branch」とは？ → 作業を並行して進めるための分岐線。mainに統合する前の作業用。</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>2. HTMLとは何か</h2>
+<p>HTMLはWebページを構成するための<strong>マークアップ言語</strong>です。タグ（<code>&lt;tag&gt;</code>）で構造を指定します。</p>
+
+<h3>基本構造</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;ページタイトル&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;見出し&lt;/h1&gt;
+    &lt;p&gt;段落&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>DOMのイメージ</h3>
+<img src="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/DOM.svg" alt="DOM構造図">
+</div>
+
+<div class="section">
+<h2>3. GitHub Pagesで公開する手順</h2>
+<p>HTMLファイルを世界に公開する方法を、初心者向けにスクリーンショット付きで説明します。</p>
+
+<h3>① GitHubで新しいリポジトリを作成</h3>
+<img src="https://docs.github.com/assets/images/help/repository/create-repository-name.png" alt="リポジトリ作成">
+<p>GitHubにログイン → 右上の <strong>＋ New repository</strong> をクリックし、<code>my-website</code> などの名前でリポジトリを作ります。</p>
+
+<h3>② index.html をアップロード</h3>
+<img src="https://docs.github.com/assets/images/help/repository/upload-file-button.png" alt="ファイルアップロード">
+<p>リポジトリ画面で <strong>Add file → Upload files</strong> を選び、自分の <code>index.html</code> をアップロードします。</p>
+
+<h3>③ GitHub Pages を有効化</h3>
+<img src="https://docs.github.com/assets/images/help/pages/pages-tab.png" alt="GitHub Pages設定">
+<p>リポジトリの <strong>Settings → Pages</strong> に進み、<strong>Deploy from a branch</strong> を選択。</p>
+
+<h3>④ ブランチを main / ルート に設定</h3>
+<img src="https://docs.github.com/assets/images/help/pages/pages-branch-dropdown.png" alt="ブランチ選択">
+<p><strong>main</strong> ブランチ、フォルダは <strong>/(root)</strong> を選び、「Save」。</p>
+
+<h3>⑤ 公開URLを確認</h3>
+<img src="https://docs.github.com/assets/images/help/pages/pages-view-site.png" alt="サイト公開確認">
+<p>設定後しばらく待つと、「Your site is live at...」というURLが表示されます。これが自分のWebページです！</p>
+</div>
+
+<div class="section">
+<h2>4. まとめ</h2>
+<ul>
+  <li>Gitは履歴管理とチーム開発の土台。</li>
+  <li>HTMLはWebの骨格。</li>
+  <li>GitHub Pagesで「自分の教科書」を世界に公開できる。</li>
+</ul>
+
+<p>→ 次のステップ：CSSを学んでデザインを整える、JavaScriptで動きをつける。</p>
+</div>
+
+</body>
+</html>
