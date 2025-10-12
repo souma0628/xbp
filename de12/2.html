@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>路上観察</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>路上観察</h1>
+    <p>見過ごしていた風景に、もう一度目を向ける。</p>
+  </header>
+
+  <main class="gallery">
+    <section class="photo-card">
+      <img src="photo1.jpg" alt="写真1">
+      <div class="caption">
+        <h2>錆びた階段</h2>
+        <p>年月を重ねた階段の色に、時間の美しさを感じる。</p>
+      </div>
+    </section>
+
+    <section class="photo-card">
+      <img src="photo2.jpg" alt="写真2">
+      <div class="caption">
+        <h2>電柱と空</h2>
+        <p>無機質な鉄の線が、青空と交差する一瞬を捉えた。</p>
+      </div>
+    </section>
+
+    <section class="photo-card">
+      <img src="photo3.jpg" alt="写真3">
+      <div class="caption">
+        <h2>路地裏の足跡</h2>
+        <p>人の気配が消えた場所に、静かな物語が残っている。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 路上観察</p>
+  </footer>
+
+  <script>
+    // スクロールでフェードイン
+    const cards = document.querySelectorAll('.photo-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    });
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>
