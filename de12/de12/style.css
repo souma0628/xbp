@@ -1,0 +1,84 @@
+body {
+  font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: #f9fafc;
+  color: #222;
+  line-height: 1.8;
+  margin: 0;
+  padding: 40px;
+}
+
+h1, h2, h3, h4 {
+  color: #1e3a8a;
+}
+
+h1 {
+  border-bottom: 3px solid #3b82f6;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+h2 {
+  border-left: 5px solid #3b82f6;
+  padding-left: 10px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+ul {
+  background: #eef2ff;
+  padding: 15px 25px;
+  border-radius: 10px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+p {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+img {
+  display: block;
+  width: 60%;
+  max-width: 500px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.compact-table {
+  width: 70%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.compact-table th,
+.compact-table td {
+  padding: 8px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.compact-table th {
+  background-color: #1e3a8a;
+  color: #fff;
+  font-weight: 600;
+}
+
+.compact-table tr:nth-child(even) td {
+  background-color: #f9fafc;
+}
+
+.compact-table tr:last-child td {
+  border-bottom: none;
+}
