@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天気 × 売上 相関分析サイト</title>
+    <style>
+        body {
+            font-family: 'Roboto', 'Hiragino Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f7fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        h2 {
+            margin-top: 40px;
+            border-left: 6px solid #667eea;
+            padding-left: 10px;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 8px;
+        }
+        img {
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            background: #eef1f7;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>天気 × 売上 相関分析</h1>
+        <p>Python（VS Code）で行ったデータ分析をまとめたサイト</p>
+    </header>
+
+    <div class="container">
+        <h2>1. 分析概要</h2>
+        <p>POSデータ・商品データ・天気データを結合し、「気温」「降水量」「天気区分」が売上にどれほど影響するかを分析しました。</p>
+
+        <h2>2. 使用した Python コード（VS Code 用）</h2>
+        <pre><code># 天気 × 売上 相関分析スクリプト
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("merged_data.csv")
+
+df["weather_code"] = df["weather"].map({"晴れ":0, "曇り":0.5, "雨":1})
+
+corr = df[["amount", "temperature", "rainfall", "weather_code"]].corr()
+print(corr)
+
+plt.scatter(df["temperature"], df["amount"])
+plt.xlabel("Temperature")
+plt.ylabel("Sales Amount")
+plt.title("Temperature vs Sales")
+plt.show()</code></pre>
+
+        <h2>3. 分析グラフ</h2>
+        <p>下の図は、気温と売上の散布図の例です。（VS Code の Python 実行結果を貼り付け）</p>
+
+        <img src="images/S__15302671.jpg" alt="解析結果の散布図" />
+
+        <h2>4. 結果まとめ</h2>
+        <p>・気温が高いほど売上が上がる傾向が見られた商品が多かった。<br>
+           ・雨の日は来店数が減少し、売上にも影響が出ていた。<br>
+           ・気温帯ごとに商品カテゴリ別の特徴が見えやすかった。</p>
+    </div>
+
+    <footer>
+        © 2025 Weather × Sales Analysis Site
+    </footer>
+</body>
+</html>
