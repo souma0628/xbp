@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> そーまの課題</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f7f7f7;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: #111;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      opacity: 0.8;
+      font-size: 16px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .work-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .about {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 45%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ddd;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .gallery img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Final Project</h1>
+    <p>Acrylic Stand / Concept Design</p>
+  </header>
+
+  <main>
+    <!-- 一文タイトル -->
+    <div class="work-title">
+      スマートフォンから視線を外し、現実世界と再び向き合うためのアクリルスタンド
+    </div>
+
+    <section class="about">
+      <h2>About This Work</h2>
+      <p>
+        本作品は、最終課題として制作したアクリルスタンドである。作成理由は、自分自身を含め、
+        多くの人がスマートフォンにとらわれている現状を打破したいと考えたからである。
+        常に画面を見続ける生活の中で、現実世界への意識が薄れていると感じ、
+        本作品では「視線を上げるきっかけ」を与えることを目的とした。<br><br>
+        こだわりのポイントとして、アクリルスタンドの周囲に
+        「触れなくなる」ことを意識させる言葉を配置した点が挙げられる。
+        言葉が自然と視界に入ることで、無意識にスマートフォンへ手を伸ばす行為を立ち止まって考える
+        仕掛けとした。デジタルから距離を取る意識を、形と文字によって表現した点が
+        本作品の特徴である。
+      </p>
+    </section>
+
+    <section class="gallery">
+      <img src="images/image110.jpeg" alt="アクリルスタンド作品写真1">
+      <img src="images/image111.jpeg" alt="アクリルスタンド作品写真2">
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Final Project</p>
+  </footer>
+
+</body>
+</html>
