@@ -1,27 +1,87 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>XBP_HPsample</title>
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8">
+<title>XBP_HPsample</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #e3edf7, #d6e4f0);
+  text-align: center;
+  color: #5a7fa3;
+}
+
+/* ロゴ */
+.logotohome img {
+  width: 120px;
+  margin-top: 20px;
+}
+
+/* タイトル */
+h1 {
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+h2 {
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* リスト消す */
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* ボタン化 */
+ol li {
+  margin: 20px 0;
+}
+
+ol li a {
+  display: block;
+  width: 280px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: #5a7fa3;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* ホバー */
+ol li a:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.8);
+}
+</style>
+
 </head>
+
 <body>
-    <logotohome>
-    <a href="./index.html"><img src="./images/0_XBlogo.png" alt=""></a>
-    </logotohome>
-    <h1>XBP</h1>
-        <h2>そーまのXBPポートフォリオ一覧</h2>
-        <!-- このようにするとコードとして認識されない。（メモができる）-->
-        <!--番号付きのリスト-->
-        <ol>
-            <li><a href="./de12/index.html">デザイン演習Ⅰ・Ⅱ</a></li>
-            <li><a href="./digi_fab/index.html">デジタルファブリケーション</a></li>
-        </ol>
 
-            
-        <br>
-        <br>
+<div class="logotohome">
+  <a href="./index.html">
+    <img src="./images/0_XBlogo.png" alt="">
+  </a>
+</div>
 
+<h1>XBP</h1>
+<h2>そーまのXBPポートフォリオ一覧</h2>
+
+<ol>
+  <li><a href="./de12/index.html">デザイン演習Ⅰ・Ⅱ</a></li>
+  <li><a href="./digi_fab/index.html">デジタルファブリケーション</a></li>
+  <li><a href="./de34/index.html">デザイン演習Ⅲ・Ⅳ</a></li>
+  <li><a href="./de56/index.html">デザイン演習Ⅴ・Ⅵ</a></li>
+</ol>
 
 </body>
 </html>
