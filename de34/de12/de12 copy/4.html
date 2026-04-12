@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Pythonゲーム紹介</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #fafafa;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            border-bottom: 3px solid #444;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        h2 {
+            color: #2b6cb0;
+            margin-top: 30px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: "Courier New", monospace;
+        }
+
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        #preview {
+            white-space: pre-wrap;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-right: 8px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2b6cb0;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #2c5282;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>そーまの課題４</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Pythonで作成したゲームの紹介</h2>
+            <p>以下に、私がPythonで作成した簡単なゲームを紹介します。</p>
+
+            <h3>ゲーム名: 筋肉ダンジョン</h3>
+            <p>
+                このゲームは、筋トレが好きな人から苦手な人まで気軽に筋トレに取り組む機会を作ろうと考案しました。
+            </p>
+
+            <h4>特徴:</h4>
+            <ul>
+                <li>人に合わせたレベル設定</li>
+                <li>ダイエットから追い込みまで可能</li>
+            </ul>
+<h2>コード紹介</h2>
+            <p>以下に、ゲームの主要なコードを紹介します。</p>
+            <pre><code>
+#定義
+import random
+import time
+def ask_yes_no(prompt):
+    """はい or いいえ で答える関数"""
+    while True:
+        ans = input(prompt + " (はい/いいえ)")
+        if ans in ["はい", "yes", "y"]:
+            return True
+        elif ans in ["いいえ", "no", "n"]:
+            return False
+        else:
+            print("「はい」か「いいえ」で答えてください。")
+def main():
+    print("=== 💪 筋肉ダンジョンへようこそ！ ===")
+    name=input("あなたの名前を入力してください")
+    print(f"\nようこそ、{name}！筋肉伝説が始まる...\n")
+    time.sleep(1)
+
+ # レベル選択
+    print("レベルを選んでください：")
+    print("1. 初級（ライトメニュー）")
+    print("2. 中級（ガチメニュー）")
+    print("3. 上級（地獄メニュー）")
+
+    level = input("レベル番号を半角数字で入力：")
+
+    if level == "1":
+        menu = ["腕立て伏せ ×10回", "スクワット ×15回", "腹筋 ×10回"]
+    elif level == "2":
+        menu = ["腕立て伏せ ×20回", "スクワット ×30回", "腹筋 ×20回", "プランク ×30秒"]
+    elif level == "3":
+        menu = ["腕立て伏せ ×50回", "スクワット ×50回", "腹筋 ×40回", "プランク ×60秒", "バーピー ×20回"]
+    else:
+        print("無効なレベルです。初級に設定します。")
+        menu = ["腕立て伏せ ×10回", "スクワット ×15回", "腹筋 ×10回"]
+
+    print("\n=== 今日の筋トレメニュー ===")
+    for m in menu:
+        print("👉", m)
+        time.sleep(0.8)
+# トレーニング開始
+    print("\nトレーニング開始！🔥")
+    time.sleep(20)
+
+ # YES/NO 
+ # トレーニング終了の確認
+    if ask_yes_no("\nトレーニングは終わりましたか？疲れたらYes、続けるならNoを選んでください。 (yes/no):"):
+        print("\nお疲れさまでした。💪")
+        comments = [
+            "筋肉が歓喜している！",
+            "あなたの上腕二頭筋が輝いている！",
+            "筋肉痛は成長の証だ！",
+            "プロテインがあなたを待っている！",
+            "筋肉がすべてを解決する！"
+        ]
+        print("\n💬", random.choice(comments))
+        print("\n=== GAME CLEAR ===")
+# トレーニング続行
+    else:
+        print("\nまだ鍛え足りないようですね…💀")
+        print("もう1セットいってみましょう！🔥")
+        time.sleep(2)
+        for m in menu:
+            print("💪", m)
+        time.sleep(1)        
+        print("\n限界突破！あなたは真の筋肉勇者だ！🏆")
+        print("お疲れ様です!")
+        print("\n=== GAME CLEAR ===")
+
+
+# ゲーム終了
+if __name__ == "__main__":
+    main()
+
+            </code></pre>
+
+            <h2>まとめ</h2>
+            <p>
+                簡単なゲームを作ってみて、いかに今遊んでいるゲームが複雑に作られているのかを痛感しました。<br>
+                繰り返しの入力など基礎をマスターしてより複雑なプログラミングができるようにしていきたいです。<br>
+                また、このゲームは、運動をしなくなった大学生や社会人が運動をするきっかけになればと思い制作しました。<br>
+                ぜひ、皆さんもプレイして健康を維持してみてください。<br>
+                いつでもおすすめのプロテインはお教えします。
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Soma Suzuki. All rights reserved.</p>
+    </footer>
+</body>
+</html>

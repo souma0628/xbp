@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>路上観察</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>路上観察</h1>
+    <p>見過ごしていた風景に、もう一度目を向ける。</p>
+  </header>
+
+  <main class="gallery">
+    <section class="photo-card">
+      <img src="images/thumbnail_image1.jpg" alt="写真1">
+      <div class="caption">
+        <h2>錆びた階段</h2>
+        <p>年月を重ねた階段の色に、時間の美しさを感じる。横浜地域に多く見られる急激な坂や階段に注目してみた。</p>
+      </div>
+    </section>
+    <section class="photo-card">
+      <img src="images/thumbnail_image2.jpg" alt="写真2"><br>
+            <div class="caption">
+        <h2>錆びた階段Part2</h2>
+        <p>同じ場所を角度を変えてみてみた。坂も見方できつさが違う。</p>
+      </div>
+    </section>
+
+    <section class="photo-card">
+      <img src="images/thumbnail_image0 (2).jpg" alt="写真3">
+      <div class="caption">
+        <h2>観光地の路地裏</h2>
+        <p>江の島の路地裏、電柱にはステッカー。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 路上観察</p>
+  </footer>
+
+  <script>
+    // スクロールでフェードイン
+    const cards = document.querySelectorAll('.photo-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    });
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>
