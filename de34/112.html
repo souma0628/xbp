@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>そーまの課題</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 40px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    h2 {
+      border-left: 5px solid #3498db;
+      padding-left: 10px;
+    }
+
+    pre {
+      background: #222;
+      color: #0f0;
+      padding: 15px;
+      overflow-x: auto;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Arduino 第1回 課題</h1>
+
+  <div class="box">
+    <h2>① 目的</h2>
+    <p>
+      Arduinoにふれてみることを目的とする。
+        光センサーを使って、暗いときにLEDが点灯し、
+      明るいときに消灯するプログラムを作成する。
+    
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>② 使用したもの</h2>
+    <ul>
+      <li>Arduino Uno</li>
+      <li>LED</li>
+      <li>光センサー</li>
+      <li>抵抗</li>
+      <li>ブレッドボード</li>
+    </ul>
+   <p>
+  <img src="/de12/images/70feb2d9-0b95-4e33-b357-0372c007aa2b.jpg" style="width: 200px;"
+</p>>
+  </div>
+
+  <div class="box">
+    <h2>③ 作成内容</h2>
+    <p>
+      センサーの値を読み取り、その値によってLEDのON/OFFを制御した。
+      暗いときにLEDが光るように設定した。
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>④ プログラム</h2>
+
+<pre>
+int sensorPin = A1;
+int ledPin = 13;
+int threshold = 500;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int val = analogRead(sensorPin);
+
+  Serial.println(val);
+
+  // 🔥ここを修正（暗いときに点灯）
+  if (val > threshold) {  // ← ここを「>」にする
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+
+  delay(500);
+}
+</pre>
+
+  </div>
+
+  <div class="box">
+    <h2>⑤ 結果・感想</h2>
+    <p>
+      センサーの値によってLEDの点灯を制御することができた。
+      閾値の設定によって動作が変わるため、調整が重要だと感じた。
+      今後は他のセンサーとも組み合わせて応用したい。
+      難しくて心がおれそうですが、頑張ります。
+    </p>
+  </div>
+
+</body>
+</html>
