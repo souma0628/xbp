@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>そーまの課題</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f4f7fb;
+      color:#333;
+      line-height:1.8;
+    }
+
+    header{
+      background: linear-gradient(135deg,#3b82f6,#2563eb);
+      color:white;
+      text-align:center;
+      padding:60px 20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1{
+      margin:0;
+      font-size:48px;
+    }
+
+    header p{
+      margin-top:10px;
+      font-size:18px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1000px;
+      margin:40px auto;
+    }
+
+    .card{
+      background:white;
+      padding:30px;
+      margin-bottom:30px;
+      border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    h2{
+      color:#2563eb;
+      border-left:8px solid #2563eb;
+      padding-left:10px;
+      margin-bottom:20px;
+    }
+
+    ul{
+      padding-left:25px;
+    }
+
+    li{
+      margin-bottom:10px;
+    }
+
+    .code{
+      background:#1e293b;
+      color:#e2e8f0;
+      padding:20px;
+      border-radius:15px;
+      overflow-x:auto;
+      font-size:14px;
+    }
+
+    .point{
+      background:#eff6ff;
+      padding:15px;
+      border-radius:15px;
+      margin-top:15px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#1e293b;
+      color:white;
+      margin-top:50px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#2563eb;
+      color:white;
+      padding:5px 15px;
+      border-radius:30px;
+      font-size:14px;
+      margin-bottom:15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Flaskについて</h1>
+    <p>Pythonで作るWebアプリケーション開発</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="tag">Flaskとは？</div>
+      <h2>Flaskの特徴</h2>
+
+      <p>
+        FlaskはPythonでWebアプリケーションを作ることができる軽量なフレームワークです。
+        シンプルな構造で初心者でも扱いやすく、
+        必要な機能を自由に追加できるのが特徴です。
+      </p>
+
+      <div class="point">
+        <strong>Flaskのメリット</strong>
+        <ul>
+          <li>シンプルで分かりやすい</li>
+          <li>PythonだけでWeb開発ができる</li>
+          <li>自由にカスタマイズ可能</li>
+          <li>初心者でも学びやすい</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tag">制作内容</div>
+      <h2>今回作ったプログラム</h2>
+
+      <p>
+        今回はCSVファイルを読み込み、
+        そのデータをWebページに表示するプログラムを作成しました。
+      </p>
+
+      <p>
+        特に、場所のデータをGoogleマップのリンクへ変換し、
+        ボタンを押すだけで地図を開けるように工夫しました。
+      </p>
+
+      <div class="point">
+        <strong>できること</strong>
+        <ul>
+          <li>CSVデータの読み込み</li>
+          <li>Webページへのデータ表示</li>
+          <li>Googleマップとの連携</li>
+          <li>条件分岐による表示変更</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tag">工夫した点</div>
+      <h2>プログラムの工夫</h2>
+
+      <ul>
+        <li>CSVのデータをリストとして取得</li>
+        <li>位置情報をGoogleマップURLに変換</li>
+        <li>条件分岐で表示方法を変更</li>
+        <li>見やすいWebページデザインを作成</li>
+      </ul>
+
+      <p>
+        データの内容によって表示を変えることで、
+        ユーザーが見やすいページになるよう工夫しました。
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="tag">HTMLコード</div>
+      <h2>データ表示部分</h2>
+
+      <div class="code">
+{% for data in mmlist %}<br>
+&nbsp;&nbsp;{% if data[1] == "場所" %}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{{ data[1] }}<br>
+&nbsp;&nbsp;{% elif data|length > 3 and data[3] %}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{{ data[1] }}<br>
+&nbsp;&nbsp;{% else %}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{{ data[1] }}<br>
+&nbsp;&nbsp;{% endif %}<br>
+{% endfor %}
+      </div>
+
+      <p>
+        このコードでは、CSVデータを1つずつ取り出し、
+        条件によって表示方法を変更しています。
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="tag">まとめ</div>
+      <h2>感想・今後の目標</h2>
+
+      <p>
+        Flaskを使うことで、
+        Pythonのデータ処理とWebページを簡単に連携させることができました。
+      </p>
+
+      <p>
+        また、CSVファイルを利用することで、
+        データ管理を簡単に行えることも学びました。
+      </p>
+
+      <p>
+        今後はデザインをさらに改善し、
+        データベースとの連携やログイン機能など、
+        より実用的なWebアプリケーション制作にも挑戦していきたいです。
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
