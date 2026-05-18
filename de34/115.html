@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>筋トレアプリ紹介</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(120deg, #d0e7ff, #f5d0d0);
+    color: #333;
+}
+
+/* ヘッダー */
+header {
+    background: #2a75c7;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+header p {
+    margin-top: 10px;
+}
+
+/* コンテナ */
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* セクション */
+section {
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 見出し */
+h2 {
+    color: #2a75c7;
+    border-left: 6px solid #2a75c7;
+    padding-left: 10px;
+}
+
+/* コード */
+pre {
+    background: #263238;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+/* 画像 */
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* 強調 */
+strong {
+    color: #e91e63;
+}
+
+/* 先生コメント */
+.thanks {
+    background: #fff3cd;
+    border-left: 6px solid #ffc107;
+}
+
+/* ホバーちょい演出 */
+section:hover {
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>KU-BizTech Portal アプリ制作</h1>
+    <p>筋トレメニュー＆食事提案アプリ</p>
+</header>
+
+<div class="container">
+
+    <!-- ① -->
+    <section>
+        <h2>① このアプリとは</h2>
+        <p>
+            このアプリは、ユーザーの身長・体重・目的に応じて、
+            最適な筋トレメニューと食事プランを自動で提案するWebアプリである。
+            Python（Flask）を用いて開発し、初心者でも効率よく体作りができるように設計した。
+        </p>
+    </section>
+
+    <!-- ② -->
+    <section>
+        <h2>② 作成したアプリの概要</h2>
+        <p>
+            ユーザーが情報を入力すると、BMIを自動計算し、
+            目的（増量・減量）に応じた筋トレメニューと必要なたんぱく質量を表示する。
+            また、食事メニューも同時に提案することで、
+            トレーニングと食事の両面からサポートできるようにした。
+        </p>
+    </section>
+
+    <!-- ③ -->
+    <section>
+        <h2>③ Python（Flask）コード</h2>
+        <pre>
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "POST":
+        name = request.form["name"]
+        height = float(request.form["height"])
+        weight = float(request.form["weight"])
+
+        bmi = weight / ((height/100)**2)
+
+        return render_template("result.html", name=name, bmi=bmi)
+
+    return render_template("index.html")
+        </pre>
+    </section>
+
+    <!-- ④ -->
+    <section>
+        <h2>④ 実行画面（イメージ）</h2>
+        <img src="images/スクリーンショット 2026-05-18 113244.png" alt="実行画面">
+        <p>
+            ユーザーが身長・体重を入力し、送信ボタンを押すと、
+            BMIが計算され、ユーザーごとに異なる筋トレメニューと食事プランが表示される。
+            画面はシンプルで見やすく、初心者でも直感的に操作できるようにデザインした。
+        <img src="images/スクリーンショット 2026-05-18 113335.png" alt="結果画面">
+        <img src="images/スクリーンショット 2026-05-18 113344.png" alt="食事提案画面">  
+    <!-- ⑤ -->
+    <section>
+        <h2>⑤ 工夫した点</h2>
+        <p>
+            BMIを自動計算し、ユーザーごとに異なる結果を表示する点を工夫した。
+            また、筋トレメニューだけでなく食事内容も提案することで、
+            より実用的なアプリにした。
+            デザイン面ではカード形式を採用し、見やすさを意識した。
+        </p>
+    </section>
+
+    <!-- ⑥ -->
+    <section class="thanks">
+        <h2>⑥ 先生へ</h2>
+        <p>
+            今回の授業を通して、普段あるゲームやサイトがいかに複雑で多くの技術が組み合わさっているかを実感しました。
+            それを知ることにより、Pythonを使って簡単なアプリを作ることができ、プログラミングの楽しさを感じることができました。
+            この経験を先生のBizTech Portalによって得ることができたので、感謝しています。このプログラムを取らなければ絶対に触れてこないものだったので
+            大変ではありますが、選んでよかったと思えます。このような機会を与えてくださりありがとうございます。
+            これからもPythonを使っていろいろなアプリを作ってみたいと思います。
+        </p>
+    </section>
+
+</div>
+
+</body>
+</html>
