@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>そーまの課題</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(120deg, #1e3c72, #2a5298);
+            color: #333;
+        }
+
+        header {
+            background: rgba(0,0,0,0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #2a5298;
+            border-left: 5px solid #2a5298;
+            padding-left: 10px;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    データベース基礎まとめ
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>1. データベースとは</h2>
+        <p>
+            データベースとは、情報を整理して保存し、必要なときに効率よく取り出せる仕組みのことです。
+            例えば、LINEやInstagramではユーザー情報やメッセージがデータベースに保存されています。
+            単なるデータの集まりではなく、検索・更新・管理がしやすいように構造化されているのが特徴です。
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>2. 基本用語の紹介</h2>
+        <p>
+            ・テーブル：データを表形式で管理するもの（Excelのシートのようなもの）<br>
+            ・レコード：1行分のデータ（例：1人のユーザー情報）<br>
+            ・フィールド：列のこと（例：名前、年齢など）<br>
+            ・主キー：データを一意に識別するための値<br>
+            これらの用語はデータベースを理解する上で非常に重要です。
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>3. SQLとは</h2>
+        <p>
+            SQL（Structured Query Language）は、データベースを操作するための言語です。
+            データの追加（INSERT）、取得（SELECT）、更新（UPDATE）、削除（DELETE）などを行うことができます。
+            ほとんどのデータベースシステムで共通して使われている標準的な言語です。
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>4. クエリとは</h2>
+        <p>
+            クエリとは、データベースに対する「問い合わせ」のことです。
+            例えば「20歳以上のユーザーを表示する」などの条件を指定してデータを取り出すことができます。
+            SQL文を使ってクエリを作成することで、必要な情報だけを効率よく取得できます。
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>5. まとめ</h2>
+        <p>
+            データベースは現代のITサービスに欠かせない存在であり、効率的な情報管理を可能にします。
+            基本用語やSQL、クエリの仕組みを理解することで、システムの動きがより深く理解できるようになります。
+            今後は実際にSQLを書いてみることで、さらに理解を深めていくことが重要です。
+        </p>
+    </div>
+
+</div>
+
+<footer>
+
+</footer>
+
+</body>
+</html>
